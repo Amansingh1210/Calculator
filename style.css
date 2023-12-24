@@ -1,0 +1,131 @@
+:root {
+    --light-button-bg1 : #A9DCFD;
+    --light-button : #6396C5;
+    --light-button-bg2 : #D8EEFF;
+    --light-bg : #E6F6FF;
+    --dark-button : #373737;
+    --light-button-bg : #3D76AB;
+    /* --light-bg : #1B6A9C; */
+    --dark-bg : #050505;
+    --dark-button : #FBFBFB;
+    --bgSecond : #0079E9;
+    --bgFirst : #00376A ;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(50deg, var(--bgFirst), var(--bgSecond));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    min-width: 300px;
+    height: 550px;
+    background-color: #FBFBFB;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.25rem;
+}
+.calculation-part{
+    width: 100%;
+    height: 40%;
+}
+.button-part{
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(90deg, #E6F6FF,#A9DCFD);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+}
+.topBar{
+    width: 100%;
+    height: 2rem;
+    /* background: black; */
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.modeSelector{
+    height: 100%;
+    width: 100px;
+    background-color: var(--light-button-bg1);
+    display: flex;
+    /* justify-content: center; */
+    border-radius: 2rem;
+    padding: 1px;
+    cursor: pointer;
+    /* gap: 1rem; */
+}
+.modeSelector img{
+    width: 30px;
+    height: 30px;
+}
+.light-mode{
+    height: 100%;
+    width: 50%;
+    background-color: var(--light-button-bg2);
+    border-radius: 2rem;
+    text-align: center;
+}
+.dark-mode{
+    height: 100%;
+    width: 50%;
+    background-color: var(--light-button-bg1);
+    border-radius: 2rem;
+    text-align: center;
+}
+.result-box{
+    width: 100%;
+    height: 8.5rem;
+    /* background: red; */
+    display: flex;
+    flex-direction: column-reverse;
+}
+.previous-result{
+    width: 100%;
+    height: 2rem;
+    /* background-color: #050505; */
+    text-align: end;
+    padding: 0 1rem 0rem 2rem;
+}
+.final-result{
+    width: 100%;
+    height: 3rem;
+    /* background-color: white; */
+    display : flex ; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem 0rem 2rem;
+    white-space:  1rem;
+}
+.final-result span{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.buttons{
+    width: 100%;
+    height: 100%;
+}
+.buttons div{
+    display: flex;
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+}
+.buttons button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: var(--light-bg);
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 1px 1px 4px  black ;
+    padding: 1rem;
+    font-size: 15px;
+    font-weight: 600;
+}
