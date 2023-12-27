@@ -1,4 +1,6 @@
 import { changeSign } from "./chageSign.js";
+import { checkError } from "./check-error.js";
+
 
 let result = "";
 const buttons = document.querySelectorAll(".button");
@@ -9,17 +11,7 @@ Array.from(buttons).forEach((button)=>{
 
         if(event.target.innerHTML == "=") {
             document.querySelector(".js-prev-result").innerHTML = result
-            try {
-                if (result.includes("++")) {
-                    throw "ERROR";
-                }             
-                else if(result.includes("+-")){
-                    throw "ERROR";               
-                }
-            } catch (err) {
-                result = err
-            }
-            // console.log(result);
+             result = checkError(result);
             if(result != "" && result != "ERROR"){
             result = eval(result);
             }
@@ -55,11 +47,21 @@ Array.from(buttons).forEach((button)=>{
 }
 calculate();
 
+// TO CHANGE THEME LIGHT TO DARK
 
-const mode = document.querySelector(".js-dark-mode");
-mode.addEventListener('click',()=>{
+const Darkmode = document.querySelector(".js-dark-mode");
+Darkmode.addEventListener('click',()=>{
+     const changeMode = document.querySelector(".js-change-mode")
+     changeMode.style.background = "#1B6A9C";
+
+     const changeModeToDark = document.querySelector(".js-light-mode")
+     changeModeToDark.style.background = "none"
+
+     const changeModeToLight = document.querySelector(".js-dark-mode")
+     changeModeToLight.style.background = "#003661"
+
     const element = document.querySelector(".js-container");
-    element.style.background = "linear-gradient(75deg, rgb(119 119 119), rgb(5, 5, 5))";
+    element.style.background = "linear-gradient(75deg, #373737, #252628, #000309)";
 
     const invertImage = document.querySelectorAll(".invert-image")
     invertImage.forEach((img) => img.style.filter = "invert(1)")
@@ -71,10 +73,44 @@ mode.addEventListener('click',()=>{
     });
 
     const changeBg = document.querySelector(".js-change-bg");
-    changeBg.style.background = "linear-gradient(75deg, #42749B, #2A44A1, #224E91, #00123F)";
+    changeBg.style.background = "linear-gradient(225deg, #42749B, #2A7DA1, #224E91, #00123F)";
 
     const equalButton = document.querySelector(".equal-button");
     equalButton.style.color = "white";
     equalButton.style.background = "#050505"
+
+});
+
+// TO CHANGE THEME DARK TO LIGHT
+
+const Lightmode = document.querySelector(".js-light-mode");
+Lightmode.addEventListener('click',()=>{
+     const changeMode = document.querySelector(".js-change-mode")
+     changeMode.style.background = "#A9DCFD";
+
+     const changeModeToDark = document.querySelector(".js-light-mode")
+     changeModeToDark.style.background = "#D8EEFF"
+
+     const changeModeToLight = document.querySelector(".js-dark-mode")
+     changeModeToLight.style.background = "none"
+
+    const element = document.querySelector(".js-container");
+    element.style.background = "linear-gradient(90deg, #FEFEFE, #F9F9F9, #F3F3F3, #E5E5E5)";
+
+    const invertImage = document.querySelectorAll(".invert-image")
+    invertImage.forEach((img) => img.style.filter = "invert(0)")
+
+    const changeButtons = document.querySelectorAll(".back-to-white");
+    changeButtons.forEach((button)=>{
+        button.style.color = "black";
+        button.style.background = "#E6F6FF";
+    });
+
+    const changeBg = document.querySelector(".js-change-bg");
+    changeBg.style.background = "linear-gradient(90deg , #9EE8FF,#5ACEFF, #79AFFF)";
+
+    const equalButton = document.querySelector(".equal-button");
+    equalButton.style.color = "balck";
+    equalButton.style.background = "#00376A"
 
 });
