@@ -92,7 +92,7 @@ body{
     height: 25px;
 }
 .result-box input{
-    height: 8.5rem;
+    height: 3.5rem;
     font-size: 2rem;
     border: none ;
     text-align: end;
@@ -132,7 +132,7 @@ body{
     margin-bottom: 0.5rem;
     gap: 1rem;
 }
-.buttons button{
+.buttons .button{
     width: 50px;
     height: 50px;
     border: none;
@@ -144,4 +144,17 @@ body{
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
+}
+#change-bg{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 1px 1px 4px  black ;
+    padding: 1rem;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #00376A;
 }

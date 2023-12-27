@@ -7,24 +7,22 @@ Array.from(buttons).forEach((button)=>{
     button.addEventListener('click',(event)=>{ 
         let input = event.target.innerHTML ;
 
-        console.log( typeof event.target.innerHTML);
         if(event.target.innerHTML == "=") {
             document.querySelector(".js-prev-result").innerHTML = result
             try {
-                if (result.includes = "++") {
-                    throw new Error("ERROR");   
+                if (result.includes("++")) {
+                    throw "ERROR";
                 }             
-                else if(result.includes = "+-"){
-                    throw new Error("ERROR");                
+                else if(result.includes("+-")){
+                    throw "ERROR";               
                 }
-            } catch (error) {
-                result = "ERROR"
-                console.log(error);
+            } catch (err) {
+                result = err
             }
+            // console.log(result);
             if(result != "" && result != "ERROR"){
             result = eval(result);
             }
-            console.log(result)
             document.querySelector(".js-result").value = result ; 
             document.querySelector(".js-operator-sign").src = "./icons/equal-sign.png"; 
             result = "";
@@ -56,3 +54,27 @@ Array.from(buttons).forEach((button)=>{
 });
 }
 calculate();
+
+
+const mode = document.querySelector(".js-dark-mode");
+mode.addEventListener('click',()=>{
+    const element = document.querySelector(".js-container");
+    element.style.background = "linear-gradient(75deg, rgb(119 119 119), rgb(5, 5, 5))";
+
+    const invertImage = document.querySelectorAll(".invert-image")
+    invertImage.forEach((img) => img.style.filter = "invert(1)")
+
+    const changeButtons = document.querySelectorAll(".back-to-white");
+    changeButtons.forEach((button)=>{
+        button.style.color = "white";
+        button.style.background = "rgb(5 5 5 / 30%)";
+    });
+
+    const changeBg = document.querySelector(".js-change-bg");
+    changeBg.style.background = "linear-gradient(75deg, #42749B, #2A44A1, #224E91, #00123F)";
+
+    const equalButton = document.querySelector(".equal-button");
+    equalButton.style.color = "white";
+    equalButton.style.background = "#050505"
+
+});
